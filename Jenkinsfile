@@ -6,11 +6,6 @@
 pipeline {
     agent any
     stages {
-        stage('Clone Terraform Repository') {
-            steps {
-                git 'https://github.com/Alii2121/GCP_Iac_DevOps_Demo.git'
-            }
-        }
         stage('Terraform Init') {
             steps {
                   sh 'terraform init'  
@@ -30,7 +25,7 @@ pipeline {
     }
     post {
         always {
-            sh 'terraform destroy -auto-approve'
+            sh 'terraform destroy -auto-approve' // The pipeline will remove the infra after applying it only test if the code work
         }
     }
 }
