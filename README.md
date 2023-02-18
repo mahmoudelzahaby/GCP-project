@@ -19,8 +19,9 @@
 - Terraform
 - GCP 
 - Kubernetes
-- Jenkins (Bonus)
+- Jenkins 
 - Docker
+- Shell script
 
 ------------------------------------
 
