@@ -81,7 +81,13 @@ kubectl get all
 
 
 ------------------------------------
+Jenkins file
 
+This pipeline has three stages: Terraform Init, Terraform Plan, and Terraform Apply. The Terraform Init stage initializes Terraform, the Terraform Plan stage generates an execution plan for the infrastructure, and the Terraform Apply stage applies the execution plan to create the infrastructure on GCP.
+
+The post section of the pipeline includes a Terraform destroy command, which ensures that the infrastructure is deleted after the pipeline is executed. This is useful for testing the pipeline without leaving any resources running unnecessarily.
+
+Remember, to run this pipeline, you will need to configure your GCP personal credentials locally on the Jenkins master machine. You can do this by following the GCP documentation on setting up authentication for your environment.
 
 # Thank You !!
 
