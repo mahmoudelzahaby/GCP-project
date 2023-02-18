@@ -1,6 +1,6 @@
 # GCP_IaC_DevOps_Demo
 
- ![gcp](https://user-images.githubusercontent.com/103090890/217839906-7df20dbc-73b1-46f1-88cf-b656036c9e80.png)
+
 ![3](https://user-images.githubusercontent.com/103090890/218168065-77f65452-a56d-49b4-bf2a-f4cc81cc4391.png)
 
 ## Project Specifications 
