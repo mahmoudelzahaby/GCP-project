@@ -68,9 +68,9 @@ kubectl apply -f <file-name>
 
 - Run the following command to get the IP Adress of your Application
 ``` bash
-kubectl get ingress 
+kubectl get all 
 ```
-- Copy the IP address and insert it in your browser to access the Application 
+- Copy the IP address of LoadBalancer and insert it in your browser to access the Application 
 
 - Now Your Infrastructure & Application Is Up and Running !!
 
