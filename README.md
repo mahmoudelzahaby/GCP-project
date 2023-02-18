@@ -1,7 +1,10 @@
 
+
 # GCP_IaC_DevOps_Demo
 
 ![0_QKtvjH2UJ_ixKITk](https://user-images.githubusercontent.com/99130650/219879548-3c0705cb-a927-4476-af03-6d64c8026a67.png)
+
+![Automating_GCP_to_Launch_VM_Instance_with_Terraform_website-1900x600](https://user-images.githubusercontent.com/99130650/219879620-99bdde53-ad8f-4333-9ccd-68fd0ec9387b.jpg)
 ![3](https://user-images.githubusercontent.com/103090890/218168065-77f65452-a56d-49b4-bf2a-f4cc81cc4391.png)
 
 ## Project Specifications 
