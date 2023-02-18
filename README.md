@@ -35,7 +35,7 @@
 
 - Install Terraform
 - GCP Account
-- (Bonus) Master Jenkins Up and Running
+- Master Jenkins Up and Running
 
 ---------------------
 
