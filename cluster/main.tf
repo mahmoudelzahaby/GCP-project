@@ -15,22 +15,9 @@ resource "google_container_cluster" "my-cluster" {
     enable_private_endpoint = true
     enable_private_nodes = true
     master_ipv4_cidr_block = var.control-plane-cidr
-    master_global_access_config {
-      enabled = true
-    }
   }
-
-  network_policy {
-    enabled = true
-  }
-
-
   ip_allocation_policy {
-  }
-
-
-
-
+  } 
 
   master_authorized_networks_config {
     cidr_blocks {
@@ -39,15 +26,6 @@ resource "google_container_cluster" "my-cluster" {
     }
   }
 
-  node_config {
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/compute",
-      "https://www.googleapis.com/auth/devstorage.read_only",
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring.write"
-    ]
-    service_account = var.sa
-  }
 
 }
 
@@ -64,13 +42,10 @@ resource "google_container_node_pool" "restricted-nodes" {
       preemptible = true
       # tags = [ "private-rules" ]
       image_type = "COS_CONTAINERD"
-      machine_type = "e2-medium"
+      machine_type = "e2-standard-4"
       service_account = var.sa
       oauth_scopes = [ 
-        "https://www.googleapis.com/auth/compute",
-        "https://www.googleapis.com/auth/devstorage.read_only",
-        "https://www.googleapis.com/auth/logging.write",
-        "https://www.googleapis.com/auth/monitoring.write"
+        "https://www.googleapis.com/auth/cloud-platform"
        ]
     }
 }

@@ -22,7 +22,7 @@ kubectl version --client
 #install gcloud plugin of gke
 sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 sudo USE_GKE_GCLOUD_AUTH_PLUGIN: True
-gcloud container clusters get-credentials python-cluster --zone=us-east1-b
+gcloud container clusters get-credentials my-cluster --zone="asia-east1-a"
 
 #install git to the private VM:
 sudo apt install git -y
