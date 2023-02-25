@@ -33,7 +33,7 @@ resource "google_compute_subnetwork" "manged-subnet" {
 }
 
 
-#2-Restricted subnet with secondry range for pods
+#2-Restricted subnet 
 
 resource "google_compute_subnetwork" "restricted-subnet" {
   name = "restricted-subnet"
@@ -45,10 +45,6 @@ resource "google_compute_subnetwork" "restricted-subnet" {
     google_compute_network.vpc
   ]
 
-  secondary_ip_range {
-    ip_cidr_range = var.pods-cidr
-    range_name = "pods"
-  } 
 
 }
 
