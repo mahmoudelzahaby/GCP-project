@@ -68,6 +68,24 @@ resource "google_compute_firewall" "http" {
 
 
 
+########################## VM firewall ##############################
+
+
+resource "google_compute_firewall" "ssh" {
+  project = var.project
+  network = var.vpc
+  priority = 100
+  direction = "INGRESS"
+  allow {
+    protocol = "tcp"
+    ports = ["22","80"]
+  }
+
+
+  target_tags = ["ssh"]
+  source_ranges = ["35.235.240.0/20","102.42.90.3"]
+
+}
 
 
  ############### Natgateway ####################
