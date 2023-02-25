@@ -22,7 +22,7 @@ resource "google_container_cluster" "my-cluster" {
   master_authorized_networks_config {
     cidr_blocks {
       display_name = "manged-subnet"
-      cidr_block = "10.0.0.0/24"
+      cidr_block = "10.0.5.0/24"
     }
   }
 
