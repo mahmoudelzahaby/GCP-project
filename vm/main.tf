@@ -11,7 +11,6 @@ resource "google_compute_instance" "instance" {
       image = "ubuntu-os-cloud/ubuntu-1804-lts"
     }
   }
-  tags = ["ssh"]
   service_account {
     email = var.email
     scopes = [ var.url ]
@@ -24,23 +23,3 @@ resource "google_compute_instance" "instance" {
 
 }
 
-
-########################## VM firewall ##############################
-
-
-resource "google_compute_firewall" "ssh" {
-  project = var.project
-  name = "ssh"
-  network = var.vpc
-  priority = 100
-  direction = "INGRESS"
-  allow {
-    protocol = "tcp"
-    ports = ["22","80"]
-  }
-
-
-  target_tags = ["ssh"]
-  source_ranges = ["35.235.240.0/20","102.42.90.3"]
-
-}
