@@ -2,9 +2,6 @@ variable "control-plane-cidr" {
   
 }
 
-variable "cluster-cidr" {
-  
-}
 
 variable "services-cidr" {
   

@@ -15,6 +15,3 @@ variable "restricted-range" {
   
 }
 
-variable "pods-cidr" {
-  
-}

@@ -68,8 +68,9 @@ resource "google_compute_firewall" "http" {
 
 
 resource "google_compute_firewall" "ssh" {
-  project = var.project
-  network = var.vpc
+  name = "ssh-connection"
+  project = var.project-id
+  network = google_compute_network.vpc.id
   priority = 100
   direction = "INGRESS"
   allow {
