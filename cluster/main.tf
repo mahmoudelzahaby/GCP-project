@@ -10,7 +10,7 @@ resource "google_container_cluster" "my-cluster" {
   remove_default_node_pool = true
   network = var.vpc
   subnetwork = var.rest-subnet
-
+  
   private_cluster_config {
     enable_private_endpoint = true
     enable_private_nodes = true
@@ -25,8 +25,10 @@ resource "google_container_cluster" "my-cluster" {
       cidr_block = "10.0.5.0/24"
     }
   }
-
-
+  
+  resource_labels = {
+    my-cluster-label = "mycluster"
+  }
 }
 
 

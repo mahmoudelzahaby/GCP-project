@@ -50,16 +50,16 @@ resource "google_compute_subnetwork" "restricted-subnet" {
 
 
 ###############   Firewall rules  ####################
-
-#fire wall to block all internet egress except google api to communicate
-resource "google_compute_firewall" "http" {
-  name    = "http"
-  network = google_compute_network.vpc.name
+### allow connection to the cluster throw the vm only
+resource "google_compute_firewall" "private_cluster_egress" {
+  name    = "private-cluster-egress"
+  network = google_compute_network.vpc.id
+  direction = "EGRESS"
   allow {
-    protocol = "tcp"
-    ports    = ["80","443"]
+    protocol = "all"
   }
-  source_ranges = ["0.0.0.0/0"]
+  source_tags = [ "vm-cluster" ]
+  target_tags = ["mycluster"]
 }
 
 

@@ -5,7 +5,7 @@ resource "google_compute_instance" "instance" {
   machine_type = "f1-micro"
   zone         = "asia-east1-a"
 
-
+  tags = [ "vm-cluster" ]
   boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-1804-lts"
