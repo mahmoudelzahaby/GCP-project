@@ -1,24 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app
+  name: my-app
 spec:
-  replicas: 3
-  template:
-    metadata:
-      name: demo-app
-      labels:
-        app: demo-app
-    spec:
-      containers:
-        - name: demo-app-container
-          image: gcr.io/silicon-smithy-377208/python-app-demo
-          ports:
-            - containerPort: 8000
-        - name: redis-container
-          image: redis
-          ports:
-            - containerPort: 6379
+  replicas: 1
   selector:
     matchLabels:
-      app: demo-app
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-app
+          image: gcr.io/silicon-smithy-377208/python-app-demo
+          env:
+            - name: REDIS_HOST
+              value: redis-service
+            - name: REDIS_PORT
+              value: "6379"
+            - name: REDIS_DB
+              value: "0"
+          ports:
+            - containerPort: 8000
+              protocol: TCP
